@@ -17,7 +17,7 @@ Configurar el .env con los datos de su conexión
     DB_NAME=
 
 Instalar sequelize
-        npm i sequelize
+        npm install --save-dev sequelize-cli
     Ejecutar la migración para crear las tablas en la DB_NAME
         sequelize db:migrate
     Ver si se realizaron las migraciones en phpmyAdmin
