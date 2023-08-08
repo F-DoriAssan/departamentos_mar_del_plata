@@ -2,20 +2,21 @@
 <html lang="es">
 
 <head>
-    <%- include('./partials/head') %>
+    <%- include('../partials/head') %>
    <!-- Estilos de pagina Stylesheet-->
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body oncontextmenu="return false">
-    <!-- Estilo del Cursor -->
-    <div class="cursor"></div>
-    <!-- Navbar -->
-    <%-include('../partials/header.ejs')%>
+<body>
+    <!-- Incluciones -->
+    <%- include('../partials/header.ejs') %>
     <%- body %>
-    <%-include('../partials/footer.ejs')%>
-    <!-- scripts -->
-    <%- include('../partials/scripts') %>
-</body>
+    <%- include('../partials/footer.ejs') %>
 
+    <!-- Scrip de JAVASCRIPT -->
+    <!-- app.js link -->
+    <script src="/js/app.js"></script>
+
+    <!-- script.js link -->
+    <script src="/js/script.js"></script>
+</body>
 </html>

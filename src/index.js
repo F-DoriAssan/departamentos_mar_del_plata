@@ -4,20 +4,20 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const mo = require("method-override");
-const ses = require("express-session");
+const methodOverride = require("method-override");
+// const ses = require("express-session");
 const ejsMate = require("ejs-mate");
 
-//indice predeterminado
-const indexRouter = require("./routes/index");
+// indice predeterminado
+// const indexRouter = require("./routes/index");
 // const usersRouter = require("./routes/users");
 // const productsRouter = require("./routes/products");
 // const authRouter = require("./routes/auth");
 // const apiRouter = require("./routes/api");
 
-const sessionMiddleware = require("./middlewares/sessionMiddleware");
-const sessionTimeMiddleware = require("./middlewares/sessionTimeMiddleware");
-const menuMiddleware = require("./middlewares/menuMiddleware");
+// const sessionMiddleware = require("./middlewares/sessionMiddleware");
+// const sessionTimeMiddleware = require("./middlewares/sessionTimeMiddleware");
+// const menuMiddleware = require("./middlewares/menuMiddleware");
 
 const app = express();
 
@@ -36,21 +36,30 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
-app.use(
-  ses({ secret: "Informacíon reservada", resave: false, saveUninitialized: true })
-);
+// app.use(
+//   ses({ secret: "Informacíon reservada", resave: false, saveUninitialized: true })
+// );
 
 //Middleware de tiempo de session
-app.use(sessionMiddleware);
-app.use(sessionTimeMiddleware);
-app.use(menuMiddleware);
+// app.use(sessionMiddleware);
+// app.use(sessionTimeMiddleware);
+// app.use(menuMiddleware);
 
 //Índice predeterminado/Ruta de inicio 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 // app.use("/", authRouter);
 // app.use("/users/", usersRouter);
 // app.use("/products/", productsRouter);
 // app.use("/api/", apiRouter);
+
+app.get("/", async (req, res)=>{
+  try {
+      res.render("../src/views/index");
+  } catch (e) {
+      console.log(e);
+  }
+});
+
 
 // catch 404 
 app.use(function (req, res, next) {
