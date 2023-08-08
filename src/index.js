@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/", async (req, res)=>{
   try {
-      res.render("../src/views/index");
+      res.render("index");
   } catch (e) {
       console.log(e);
   }
@@ -68,25 +68,25 @@ app.use(function (req, res, next) {
 });
 
 // vista no encontrada
-app.use(function (err, req, res, next) {
-  console.log(err);
-  if (err["view"] != null) {
-    console.error("errorView", err.message);
-    return res.render("errors/500");
-  }
-  return next();
-});
+// app.use(function (err, req, res, next) {
+//   console.log(err);
+//   if (err["view"] != null) {
+//     console.error("errorView", err.message);
+//     return res.render("errors/500");
+//   }
+//   return next();
+// });
 
 // error handler
-app.use(function (err, req, res, next) {
-  console.log("errorHandler", err.message);
-  // set locals retorna mensaje de error development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+// app.use(function (err, req, res, next) {
+//   console.log("errorHandler", err.message);
+//   // set locals retorna mensaje de error development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  // retornamos al error 500
-  res.status(err.status || 500);
-  res.render("error");
-});
+//   // retornamos al error 500
+//   res.status(err.status || 500);
+//   res.render("error");
+// });
 
 module.exports = app;
