@@ -1,0 +1,21 @@
+<script>
+    {
+        /* Funciones de Cursor*/
+        const cursor = document.querySelector(".cursor");
+        // Agrego estilo a la ubicación del cursor cada vez que se mueve (CURSOR FALSO)
+        document.addEventListener("mousemove", (event) => {
+            cursor.setAttribute(
+                "style",
+                `top: ${event.pageY - scrollY - 10}px ; left: ${event.pageX - 10}px`
+            );
+        });
+
+        document.addEventListener("click", () => {
+            cursor.classList.add("expand");
+
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500);
+        });
+    }
+</script>
