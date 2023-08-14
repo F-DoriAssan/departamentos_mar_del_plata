@@ -13,26 +13,7 @@
             <li><a href="#experience">Experiencias</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
-    </nav>
-</header>
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-    <div class="container">
-
-        <!-- Logo-->
-        <a class="navbar-brand waves-effect" href="/">
-            <strong class="blue-text">TecnoHogar Web</strong>
-        </a>
-
-
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Diseño Nav -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="container">
 
             <!-- Banda Derecha -->
             <ul class="navbar-nav mr-auto align-items-center">
@@ -51,28 +32,7 @@
                         <span class="sr-only">(current)</span>
                         <% } %>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        Nosotros
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li>
-                            <a class="quienes_somos dropdown-item" href="/nosotros/nuestra-empresa">
-                                Nuestra empresa
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nuestros_clientes dropdown-item" href="/nosotros/nuestros-clientes">
-                                Nuestros clientes
-                            </a>
-                        </li>
-                        <li>
-                            <a class="empresas_confiaron dropdown-item" href="/nosotros/afiliados">
-                                Empresas que confian
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
+
                 <% if (locals.userFound) { %> <!--si hay usuario .. -->
                     <li class="nav-item  <%= locals.active == 'profile' ? 'active':'' %>">
                         <a class="nav-link waves-effect" href="/profile">Mi Cuenta </a>
@@ -102,19 +62,9 @@
                         <span class="badge red z-depth-1 mr-1 cart-number">0</span>
                     </a>
                 </li>
-
-
-
-                <li class="nav-item">
-                        <a href="https://github.com/F-DoriAssan"
-                                class="nav-link border border-light rounded waves-effect" target="_blank">
-                            <i class="fab fa-github mr-2"></i>Repositorio
-                         </a>
-                    </li>
             </ul>
-
         </div>
-
     </div>
-</nav>
-<!-- fin del nav-->
+    </nav>
+</header>
+

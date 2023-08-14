@@ -46,25 +46,25 @@ app.use(sessionTimeMiddleware);
 app.use(menuMiddleware);
 
 // Índice predeterminado/Ruta de inicio 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 // app.use("/", authRouter);
 app.use("/users/", usersRouter);
 app.use("/products/", productsRouter);
 app.use("/api/", apiRouter);
 
-// app.get("/", async (req, res)=>{
-//   try {
-//       res.render("index");
-//   } catch (e) {
-//       console.log(e);
-//   }
-// });
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  return res.render("errors/404");
-  //next(createError(404));
+app.get("/", async (req, res)=>{
+  try {
+      res.render("index");
+  } catch (e) {
+      console.log(e);
+  }
 });
+
+// // catch 404 and forward to error handler
+// app.use(function (req, res, next) {
+//   return res.render("errors/404");
+//   //next(createError(404));
+// });
 
 // vista no encontrada
 app.use(function (err, req, res, next) {

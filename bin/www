@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*Module dependencieas*/
-var app = require('../src/index');
+var app = require('../src/app');
 var debug = require('debug')('magazine:server');
 var http = require('http');
 
