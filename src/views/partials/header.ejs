@@ -13,57 +13,42 @@
             <li><a href="#experience">Experiencias</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
-        <div class="container">
+        <ul>
+            <li>
+                <a <%= locals.active == 'products' ? 'active':'' %> href="/products">Productos</a>
+                <% if (locals.active=='products' ) { %>
 
-            <!-- Banda Derecha -->
-            <ul class="navbar-nav mr-auto align-items-center">
-                <li class="nav-item <%= locals.active == '' ? 'active':'' %> ">
-                    <a class="nav-link waves-effect" href="/">Inicio
-                        <% if (locals.active=='/' ) { %>
-
-                            <span class="sr-only">(current)</span>
-                            <% } %>
-                    </a>
+                    <span class="sr-only">(current)</span>
+                    <% } %>
+            </li>
+            <% if (locals.userFound) { %> <!--si hay usuario .. -->
+                <li <%= locals.active == 'profile' ? 'active':'' %>>
+                    <a href="/profile">Mi Cuenta </a>
                 </li>
-                <li class="nav-item <%= locals.active == 'products' ? 'active':'' %>">
-                    <a class="nav-link waves-effect" href="/products">Productos</a>
-                    <% if (locals.active=='products' ) { %>
-
-                        <span class="sr-only">(current)</span>
-                        <% } %>
+                <li>
+                    <form action="/logout" method="POST">
+                        <button class="btn-link btn py-2 px-3 m-0 nav-link waves-effect"><i
+                                class="fas fa-sign-out-alt"></i></button>
+                    </form>
                 </li>
-
-                <% if (locals.userFound) { %> <!--si hay usuario .. -->
-                    <li class="nav-item  <%= locals.active == 'profile' ? 'active':'' %>">
-                        <a class="nav-link waves-effect" href="/profile">Mi Cuenta </a>
+                <% } else { %>
+                    <li>
+                        <a href="/login">Ingreso</a>
                     </li>
                     <li class="nav-item">
-                        <form action="/logout" method="POST">
-                            <button class="btn-link btn py-2 px-3 m-0 nav-link waves-effect"><i
-                                    class="fas fa-sign-out-alt"></i></button>
-                        </form>
+                        <a href="/register">Registro</a>
                     </li>
-                    <% } else { %>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="/login">Ingreso</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="/register">Registro</a>
-                        </li>
-                        <% } %>
-            </ul>
-
-            <!-- Banda Izquierda -->
-            <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item">
-                    <a class="nav-link waves-effect mr-2 pr-4" href="/cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
-                        <span class="badge red z-depth-1 mr-1 cart-number">0</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+                    <% } %>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-effect mr-2 pr-4" href="/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
+                    <span class="badge red z-depth-1 mr-1 cart-number">0</span>
+                </a>
+            </li>
+        </ul>
     </div>
     </nav>
 </header>
