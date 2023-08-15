@@ -3,7 +3,7 @@
     <a href="/" class="logo"><img src="images/logofavicon11.png" alt="logo_departamentos_mar_del_plata"></i></i> Departamentos</a>
 
     <div id="menu" class="fas fa-bars"></div>
-    <nav class="navbar">
+    <div class="navbar">
         <ul>
             <li><a class="active" href="/">Inicio</a></li>
             <li><a href="#about">Perfil</a></li>
@@ -13,6 +13,16 @@
             <li><a href="#experience">Experiencias</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-effect mr-2 pr-4" href="/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
+                    <span class="badge red z-depth-1 mr-1 cart-number">0</span>
+                </a>
+            </li>
+        </ul>
+    </div>
         <ul>
             <li>
                 <a <%= locals.active == 'products' ? 'active':'' %> href="/products">Productos</a>
@@ -39,15 +49,6 @@
                         <a href="/register">Registro</a>
                     </li>
                     <% } %>
-        </ul>
-        <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-                <a class="nav-link waves-effect mr-2 pr-4" href="/cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
-                    <span class="badge red z-depth-1 mr-1 cart-number">0</span>
-                </a>
-            </li>
         </ul>
     </div>
     </nav>
