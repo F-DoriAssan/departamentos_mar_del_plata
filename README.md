@@ -1,33 +1,18 @@
-## TecnoHogar 2.0 es una pagina en proceso, realizada con NodeJS, ExpressJS, su estilo es MVC. Tambien cuenta con mdb de bs en cual me ayudan con las clases. Eso quiere decir que tambien cuenta con css para el diseño de algunos objetos. Cabe aclarar que la pagina se encuentra en proceso y es realizada 100% por Federico Dorigatti solamente. Gracia a la conexion con base de datos en esta pagina se pueden agregar productos en la seccion de productos, si esta se lo marca aparecera en el inicio de la pagina. Una vez cargado los productos podemos empezar agregarlos en el carro de compras. Para pude terminar nuestra compra debemos loguernos y iniciar seccion de ahi elegimos el metodo de envio y pago y confirmamos el pedido. Cuentas con validaciones y es 100% responsive.
+# Departamento Mar del Plata
 
-Instalación
-Clonar el repo
-    Instalar paquetes npm i , npm i express , npm i nodemon -D, npm i method-override (El uso de nodemon para el reinicio del servidor es opcional)
-    Agregar en el packge.json start:"nodemon ./bin/www"
+**Departamento Mar del Plata** é um projeto em desenvolvimento, criado com NodeJS e ExpressJS, seguindo o padrão MVC. O projeto utiliza Bootstrap (MDB) para o design e CSS personalizado para estilizar alguns elementos.
 
-Crear .env para las variables de entorno cp
-    .env.example .env
+## Funcionalidades
 
-    Crear la base de datos en PHPMyAdmin 
-    
-Configurar el .env con los datos de su conexión
-    PORT=
-    DB_USER=
-    DB_PASS=
-    DB_NAME=
+- **Gestão de Produtos**: Adicione produtos na seção de produtos e eles aparecerão na página inicial.
+- **Carrinho de Compras**: Adicione produtos ao carrinho e prossiga para a compra.
+- **Processo de Compra**: Faça login, escolha o método de envio e pagamento, e confirme o pedido.
+- **Validações**: O sistema possui validações para garantir a integridade dos dados.
+- **Responsivo**: A página é 100% responsiva, adaptando-se a diferentes dispositivos e tamanhos de tela.
 
-Instalar sequelize
-        npm install --save-dev sequelize-cli
-        npx sequelize-cli init
-            Ejecutar la migración para crear las tablas en la DB_NAME
-        npx sequelize-cli db:migrate
-    Ver si se realizaron las migraciones en phpmyAdmin
+## Observações
 
-Si seguiste paso a paso podemos arrancar nuestro servidor!!
-    npm start
+- O projeto está em desenvolvimento e é realizado 100% por Federico Dorigatti.
+- A conexão com a base de dados permite a gestão e visualização de produtos.
 
-Si no funciono elimina el modulo node y el package json
-    rm -rf node_modules
-    rm -rf package-lock.json
-Vuelva a instalar npm i
-© 2022 DoriAss
+Obrigado por visitar o **Departamento Mar del Plata**!
